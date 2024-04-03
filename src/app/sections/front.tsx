@@ -1,6 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 function Front() {
+  const [phoneNumber, setPhoneNumber] = React.useState();
+  const [consent, setConsent] = React.useState(false);
+  const [isDisabled, setIsDisabled] = React.useState(false);
+
+  const handleApply = (e: any) => {
+    e.preventDefault();
+    setIsDisabled(true);
+  };
+
   return (
     <div>
       <div className="relative h-[100vh] w-full flex items-center justify-center">
@@ -8,6 +18,7 @@ function Front() {
           <img
             src="https://www.uni.cards/images/nx-wave/nx_wave_hero.png"
             className="h-auto w-[225px] md:w-[420px] md:h-[420px] max-w-[420px] z-[1] mx-6"
+            alt="NX Wave Card Image"
           />
           <div className="z-10 w-full mt-7 md:mt-0 md:my-auto flex flex-col self-end md:self-center px-6">
             <h1 className="font-normal max-w-[300px] md:max-w-[700px] text-3xl md:text-[3.4rem] md:leading-[54px] text-black md:mb-6 ">
@@ -52,7 +63,11 @@ function Front() {
               </p>
             </div>
             <div className="hidden md:block">
-              <div className="flex justify-between items-center block max-w-[94vw]">
+              <div
+                className={`${
+                  isDisabled ? "hidden" : "flex"
+                } justify-between items-center max-w-[94vw]`}
+              >
                 <div className="flex flex-col">
                   <form>
                     <div className="flex bg-black p-1 pl-2 rounded-xl justify-between">
@@ -60,20 +75,28 @@ function Front() {
                         <input
                           className="bg-black border-0 outline-none text-white p-1 placeholder-[#7E8587] w-44"
                           placeholder="Enter Phone Number"
-                          value=""
+                          value={phoneNumber}
+                          onChange={(e: any) => setPhoneNumber(e.target.value)}
                         />
                         <span className="w-6 flex items-center justify-end h-full"></span>
                       </div>
                       <button
                         type="submit"
                         className="text-center text-sm leading-7 justify-between pt-2 ml-2 bg-uni-yellow rounded-xl z-10 py-2 px-4 disabled:opacity-80 disabled:cursor-not-allowed"
+                        onClick={handleApply}
                       >
                         <span>Apply Now</span>
                       </button>
                     </div>
                   </form>
-                  <div className="consent flex items-center py-4 px-2 max-w-xs">
-                    <input type="checkbox" id="consent-msg" />
+                  <div
+                    className="consent flex items-center py-4 px-2 max-w-xs"
+                    onClick={() => {
+                      setConsent((prev) => !prev);
+                      console.log("first");
+                    }}
+                  >
+                    <input type="checkbox" id="consent-msg" checked={consent} />
                     <label className="consent text-white md:text-black text-[10px] leading-3 cursor-pointer">
                       You agree to be contacted by Uni Cards over Call, SMS,
                       Email or WhatsApp to guide you through your application.
@@ -81,7 +104,11 @@ function Front() {
                   </div>
                 </div>
               </div>
-              <div className="flex hidden max-w-xs flex-col justify-start">
+              <div
+                className={`${
+                  isDisabled ? "flex" : "hidden"
+                } max-w-xs flex-col justify-start`}
+              >
                 <div className="w-full max-w-[300px]">
                   <a
                     href="https://uni-growth.onelink.me/v6cm/"

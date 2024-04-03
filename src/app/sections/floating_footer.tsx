@@ -45,15 +45,13 @@ function FloatingFooter() {
                   </button>
                 </div>
               </form>
-              <div className="consent flex items-center py-4 px-2 max-w-xs">
-                <input
-                  type="checkbox"
-                  id="consent-msg"
-                  checked={consent}
-                  onChange={() => {
-                    setConsent((prev) => !prev);
-                  }}
-                />
+              <div
+                className="consent flex items-center py-4 px-2 max-w-xs"
+                onClick={() => {
+                  setConsent((prev) => !prev);
+                }}
+              >
+                <input type="checkbox" id="consent-msg" checked={consent} />
                 <label className="consent text-white md:text-black text-[10px] leading-3 cursor-pointer">
                   You agree to be contacted by Uni Cards over Call, SMS, Email
                   or WhatsApp to guide you through your application.

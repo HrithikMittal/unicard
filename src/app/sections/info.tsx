@@ -25,7 +25,7 @@ const InfoBocks = [
 
 function InfoSection() {
   return (
-    <div className="w-full mx-auto px-6 md:px-4 bg-white md:pb-[150px]">
+    <div className="w-full mx-auto px-6 md:px-4 bg-white md:pb-[150px] pb-[50px]">
       <div className="flex  max-w-7xl mx-auto justify-center flex-col">
         {InfoBocks.map((infoBlock, index) => (
           <div

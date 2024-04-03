@@ -3,8 +3,8 @@ import React from "react";
 
 function DownMover() {
   return (
-    <div className=" md:py-[150px] bg-white">
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-4">
+    <div className="py-[50px] md:py-[150px] bg-white">
+      <div className="w-full max-w-7xl mx-auto px-6">
         <div className="flex flex-col justify-center md:text-center text-[28px] md:text-[40px] leading-[34px] md:leading-[1.2] tx-black-primary md:pb-16 font-medium">
           <p
             style={{

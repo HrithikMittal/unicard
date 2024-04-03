@@ -54,6 +54,58 @@ body {
   color: rgba(90, 214, 196, var(--tw-text-opacity));
 }
 
+.Floating_container {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 110%);
+}
+
+.scroll-div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 999;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.5s ease; /* Transition effect for opacity */
+}
+
+.visible {
+  opacity: 1;
+}
+
+.header {
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  min-height: 80px;
+  z-index: 15;
+}
+
+.header_container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1330px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
 .Logo_logo_white__zowGB {
   width: 100px;
   height: 80px;
